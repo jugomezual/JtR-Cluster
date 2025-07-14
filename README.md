@@ -18,7 +18,7 @@ This project enables the distribution of cracking tasks among multiple processin
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/usuario/JtR-Cluster.git](https://github.com/usuario/JtR-Cluster.git)
+    git clone [https://github.com/jugomezual/JtR-Cluster.git](https://github.com/jugomezual/JtR-Cluster.git)
     ```
 
 2.  **Decompress the modules according to their function:**
