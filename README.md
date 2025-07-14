@@ -52,7 +52,7 @@ This project enables the distribution of cracking tasks among multiple processin
     Configure the database connection in `conexion.php` according to your local parameters.
 
 ### Credits
-Author: Juan Rafael Madolell and Dr. Julio Gómez López
+Authors: Juan Rafael Madolell and Dr. Julio Gómez López
 
 Final Degree Project Advisor: Dr. D. Julio Gómez López
 University of Almería, 2025
