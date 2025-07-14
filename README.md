@@ -1,50 +1,58 @@
 
 # JtR-Cluster
-Plataforma distribuida para el cracking de contraseñas basada en John the Ripper, con reparto de tareas y gestión multi-nodo y multi-GPU. Desarrollada como parte del Trabajo de Fin de Grado en Ingeniería Informática (Universidad de Almería).
-## Descripción general
+Distributed platform for password cracking based on John the Ripper, featuring task distribution and multi-node, multi-GPU management. Developed as part of the Final Degree Project in Computer Engineering (University of Almería).
 
-Este proyecto permite el reparto de tareas de cracking entre múltiples nodos de procesamiento, aprovechando tanto CPUs como GPUs, e integrando módulos de servidor, cliente, base de datos y una interfaz web para la gestión y monitorización de trabajos.
+## Overview
 
-## Estructura del repositorio
+This project enables the distribution of cracking tasks among multiple processing nodes, leveraging both CPUs and GPUs. It integrates server, client, and database modules, along with a web interface for job management and monitoring.
 
-- **BD.tgz**: Script SQL para la creación y despliegue de la base de datos (`miweb_db.sql`).
-- **Cliente.tgz**: Código fuente, binarios y scripts de los nodos de procesamiento.
-- **Server.tgz**: Código fuente y ejecutable del servidor principal de coordinación.
-- **Web.tgz**: Archivos de la interfaz web, scripts PHP y logs de gestión.
+## Repository Structure
 
-## Instrucciones de uso
+- **BD.tgz**: SQL script for creating and deploying the database (`miweb_db.sql`).
+- **Cliente.tgz**: Source code, binaries, and scripts for the processing nodes.
+- **Server.tgz**: Source code and executable for the main coordination server.
+- **Web.tgz**: Web interface files, PHP scripts, and management logs.
 
-1. **Clonar el repositorio:**
+## Usage Instructions
 
-   ```bash
-   git clone https://github.com/usuario/JtR-Cluster.git
+1.  **Clone the repository:**
 
-2. **Descomprimir los módulos según su función:**
-  
-   ```bash
-   tar -xvzf BD.tgz
-   tar -xvzf Cliente.tgz
-   tar -xvzf Server.tgz
-   tar -xvzf Web.tgz
+    ```bash
+    git clone [https://github.com/usuario/JtR-Cluster.git](https://github.com/usuario/JtR-Cluster.git)
+    ```
 
-  
-3. **Base de datos:**
-   ```bash
-   mysql -u usuario -p < miweb_db.sql
+2.  **Decompress the modules according to their function:**
 
-4. **Cliente y servidor:**
-   Compilar el código fuente si es necesario:
-   ```bash
-   gcc procesamiento.c -o procesamiento
-   gcc gpu_report.c -o gpu_report
-   gcc cpu_report.c -o cpu_report
-   gcc server.c -o server
+    ```bash
+    tar -xvzf BD.tgz
+    tar -xvzf Cliente.tgz
+    tar -xvzf Server.tgz
+    tar -xvzf Web.tgz
+    ```
 
-5.**Web:**
-  Copiar el contenido de www/ a tu servidor web Apache/Nginx con soporte PHP.
-  Configura la conexión a la base de datos en conexion.php según tus parámetros locales.
+3.  **Database:**
 
-  Créditos
-  Autor: Juan Rafael Madolell
-  TFG dirigido por: Dr. D. Julio Gómez López
-  Universidad de Almería, 2025
+    ```bash
+    mysql -u username -p < miweb_db.sql
+    ```
+    *Note: Replace `usuario` with your actual MySQL username.*
+
+4.  **Client and Server:**
+    Compile the source code if necessary:
+
+    ```bash
+    gcc procesamiento.c -o procesamiento
+    gcc gpu_report.c -o gpu_report
+    gcc cpu_report.c -o cpu_report
+    gcc server.c -o server
+    ```
+
+5.  **Web:**
+    Copy the contents of `www/` to your Apache/Nginx web server with PHP support.
+    Configure the database connection in `conexion.php` according to your local parameters.
+
+### Credits
+
+Author: Juan Rafael Madolell
+Final Degree Project Advisor: Dr. D. Julio Gómez López
+University of Almería, 2025
