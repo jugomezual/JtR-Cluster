@@ -57,7 +57,7 @@ directly.
 │  MySQL (jtrcluster): nodes, cpus, gpus, │          │    under the hood)               │
 │         hashes, jobs, charset           │          │                                  │
 └─────────────────────────────────────────┘          └──────────────────────────────────┘
-  Single instance — 150.214.150.33                    One instance per cracking machine
+  Single instance —                                   One instance per cracking machine
   Owns all state: scheduling, quantum                 (including that same host, acting
   generation, device/job bookkeeping,                 as a local node). No direct DB
   web UI                                               access — only talks to the REST API.
