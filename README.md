@@ -42,21 +42,21 @@ deployed on any number of machines without ever touching the database
 directly.
 
 ```
-┌───────────────────────────────────────┐          ┌──────────────────────────────────┐
-│              SERVER  (www/)             │          │         jtr-cluster-node           │
-│        Apache + PHP 8  +  MySQL         │          │             (C daemon)             │
-│                                          │          │                                    │
-│  [Browser] ──► index.php / procesar.php │          │   CPU worker thread(s)             │
-│               (public submission form,  │   HTTP   │   GPU worker thread(s)             │
-│                admin dashboard)         │ ◄──────► │   one thread per active device      │
-│                                          │  REST    │                                    │
-│  REST API ──► /api/node/register.php    │  API     │   loop: register → GET job →       │
-│               /api/node/job.php         │          │         run john → POST result      │
-│               /api/node/result.php      │          │                                    │
-│                                          │          │   (invokes John the Ripper          │
-│  MySQL (jtrcluster): nodes, cpus, gpus, │          │    under the hood)                  │
-│         hashes, jobs, charset           │          │                                    │
-└───────────────────────────────────────┘          └──────────────────────────────────┘
+┌─────────────────────────────────────────┐          ┌──────────────────────────────────┐
+│              SERVER  (www/)             │          │         jtr-cluster-node         │
+│        Apache + PHP 8  +  MySQL         │          │             (C daemon)           │
+│                                         │          │                                  │
+│  [Browser] ──► index.php / procesar.php │          │   CPU worker thread(s)           │
+│               (public submission form,  │   HTTP   │   GPU worker thread(s)           │
+│                admin dashboard)         │ ◄──────► │   one thread per active device   │
+│                                         │  REST    │                                  │
+│  REST API ──► /api/node/register.php    │  API     │   loop: register → GET job →     │
+│               /api/node/job.php         │          │         run john → POST result   │
+│               /api/node/result.php      │          │                                  │
+│                                         │          │   (invokes John the Ripper       │
+│  MySQL (jtrcluster): nodes, cpus, gpus, │          │    under the hood)               │
+│         hashes, jobs, charset           │          │                                  │
+└─────────────────────────────────────────┘          └──────────────────────────────────┘
   Single instance — 150.214.150.33                    One instance per cracking machine
   Owns all state: scheduling, quantum                 (including that same host, acting
   generation, device/job bookkeeping,                 as a local node). No direct DB
